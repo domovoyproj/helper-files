@@ -1,24 +1,9 @@
-# 📦 Helper Media & File Storage
+# helper-files
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Role-Public%20CDN%20Storage-blue?style=for-the-badge&logo=files" alt="CDN Storage" />
-  <img src="https://img.shields.io/badge/Ecosystem-Helper%20Suite-purple?style=for-the-badge" alt="Helper Suite" />
-  <img src="https://img.shields.io/badge/Shortener-TinyURL%20API-orange?style=for-the-badge" alt="TinyURL" />
-</p>
+Хранилище файлов для [Helper](https://github.com/domovoyproj/helper-app). Сам по себе это просто репозиторий на GitHub — Helper использует его как бесплатный файловый бэкенд: загружает файл через GitHub REST API (коммитом в `uploads/`), получает прямую ссылку на raw-контент и сокращает её через TinyURL.
 
-Публичное хранилище медиафайлов и документов для приложения [Helper](https://github.com/domovoyproj/helper-app).
+Ограничение на размер файла — около 15 МБ (лимит GitHub API на содержимое одного коммита).
 
----
+Файлы лежат в `uploads/` с именами, которые им дал Helper при загрузке (обычно совпадают с оригинальным именем файла). Удаление файла из Helper тоже делает коммит — удаляющий файл из репозитория, поэтому в истории коммитов видно и загрузки, и удаления.
 
-## 📌 Назначение
-
-Репозиторий используется как легковесный CDN/файлообменник:
-- Загрузка изображений, документов и файлов до 15 МБ через встроенный модуль в приложении Helper.
-- Прямая генерация коротких ссылок через TinyURL API для удобного обмена.
-- Управление и удаление файлов с синхронизацией SHA-хэшей через GitHub REST API.
-
----
-
-## 📂 Структура
-
-- `uploads/` — каталог загруженных файлов с уникальными метками времени.
+Руками в этот репозиторий обычно никто не лезет — всё происходит через API из Helper.
